@@ -7,17 +7,21 @@ def index(request):
     return render(request,template_name)
 
 def cadastrar(request):
-    return HTTPResponse('Cadastrar')
+    template_name = "produtos/cadastrar.html"
+    return render(request,template_name)
 
 def deletar(request):
-
-    return HTTPResponse('Deletar')
+    template_name = "produtos/deletar.html"
+    return render(request,template_name)
 
 def listar(request):
-    return HTTPResponse('Listar')
+    template_name = "produtos/listar.html"
+    return render(request,template_name)
 
 def visualizar(request):
-    return HTTPResponse('Visualizar')
+    template_name = "produtos/visualizar.html"
+    return render(request,template_name)
 
 def atualizar(request):
-    return HTTPResponse('Atualizar')
+    template_name = "produtos/atualizar.html"
+    return render(request,template_name)
