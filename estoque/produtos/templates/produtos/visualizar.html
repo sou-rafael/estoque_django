@@ -1,23 +1,9 @@
 {% extends 'produtos/base.html' %}
 
 {% block content %}
-'''
-<p>Pronto para Visualizar determinado produto</p>
-<<<<<<< HEAD
-<fieldset>
-    <label>Digite o Id: </label>
-    <input type="int" name="id">
-</fieldset>
-{% for produto in produtos%}
-<ul class="produtos_lista">
-    <li class="produtos_items">
-        <span><a href="produtos/{{produtos.id}}">{{produtos.nome}}</a></span>
-    </li>
-</ul>
-{%endfor%}
-=======
-<h1>{{produto.nome}}</h1>
-<h3>{{produto.descricao}}</h3>
-<h4>{{produto.quantidade}}</h4>
->>>>>>> 83d3f3e3a79d518410ffffc19255757e48c8e4ed
+    <p>Visualizar</p>
+    
+    <h1>{{produto.nome}}</h1>
+    <h3>{{produto.descricao}}</h3>
+    <h4>{{produto.quantidade}}</h4>
 {% endblock content %}

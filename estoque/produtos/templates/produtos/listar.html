@@ -1,12 +1,12 @@
 {% extends 'produtos/base.html' %}
 
 {% block content %}
-<p>Pronto para Listar os produtos</p>
+<h5>Clique nos produtos para visualizar</h5>
 <div>
     <ul>
         {%for produto in produtos%}
         <li>
-            <span><a href="<int:id>">{{produto.nome}}</a></span>
+            <span><h4><a href="http://127.0.0.1:8000/produtos/{{produto.id}}">{{produto.nome}}</a></h4></span>
             <span><i></i><span>
         </li>
         {%endfor%}
