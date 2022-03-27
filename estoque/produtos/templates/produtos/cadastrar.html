@@ -1,5 +1,16 @@
 {% extends 'produtos/base.html' %}
 
 {% block content %}
-<p>Pronto para Cadastrar um produto</p>
+<p>Pronto para Cadastrar um produto!</p>
+
+<form method="POST">
+    {% csrf_token %}
+        
+        <fieldset>
+            {{ form.as_p}}
+                <input type="submit" name="cadastrar"  value="Cadastrar">
+        </fieldset>
+    
+
+</form>
 {% endblock content %}

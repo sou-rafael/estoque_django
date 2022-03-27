@@ -7,7 +7,7 @@
         {%for produto in produtos%}
         <li>
             <span><h4><a href="http://127.0.0.1:8000/produtos/{{produto.id}}">{{produto.nome}}</a></h4></span>
-            <span><i></i><span>
+            <a href='http://127.0.0.1:8000/produtos/atualizar/{{produto.id}}'><span><i class="fas fa-edit">Editar</i></span></a>
         </li>
         {%endfor%}
     </ul>
