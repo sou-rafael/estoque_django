@@ -3,7 +3,7 @@
 {% block content %}
 <h5>Clique nos produtos para visualizar</h5>
 <div>
-    <ul>
+    <ul class='task-list'>
         {%if messages%}
             <ul class='messages'>
                 {%for message in messages%}
@@ -14,11 +14,17 @@
         {% endif %}
 
         {%for produto in produtos%}
-        <li>
-            <span><h4><a href="/produtos/{{produto.id}}">{{produto.nome}}</a></h4></span>
-            <a href='/produtos/atualizar/{{produto.id}}'><span><i class="atualizar">Editar</i></span></a>
-            <a href='/produtos/deletar/{{produto.id}}'><span><i class="deletar">Deletar</i></span></a>
-        </li>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/produtos/{{produto.id}}">{{produto.nome}}</a>
+                <span class="badge bg-primary rounded-pill">{{produto.quantidade}}</span>
+            </li>
+
+            <li>
+                <a href='/produtos/atualizar/{{produto.id}}' class="list-group-item list-group-item-action"><span><i class="fas fa-edit">Editar</i></span></a>
+                <a href='/produtos/deletar/{{produto.id}}' class="list-group-item list-group-item-action"><span><i class="fas fa-trash">Deletar</i></span></a>
+            </li>
+        </ul>
         {%endfor%}
     </ul>
 </div>
