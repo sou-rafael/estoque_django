@@ -1,5 +1,7 @@
 {% extends 'produtos/base.html' %}
 
 {% block content %}
-<p>Pronto para Deletar um produto</p>
+<h3>Confirma que deseja EXCLUIR "{{produto.nome}}"?</h3>
+<button name="excluir" type="request" formmethod="POST">Sim</button>
+<button name="voltar" type="request">Não</button>
 {% endblock content %}

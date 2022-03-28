@@ -4,10 +4,20 @@
 <h5>Clique nos produtos para visualizar</h5>
 <div>
     <ul>
+        {%if messages%}
+            <ul class='messages'>
+                {%for message in messages%}
+                    <li {%if message.tags%}class='alert alert'{%endif%}>{{message}}</li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
         {%for produto in produtos%}
         <li>
-            <span><h4><a href="http://127.0.0.1:8000/produtos/{{produto.id}}">{{produto.nome}}</a></h4></span>
-            <a href='http://127.0.0.1:8000/produtos/atualizar/{{produto.id}}'><span><i class="fas fa-edit">Editar</i></span></a>
+            <span><h4><a href="/produtos/{{produto.id}}">{{produto.nome}}</a></h4></span>
+            <a href='/produtos/atualizar/{{produto.id}}'><span><i class="atualizar">Editar</i></span></a>
+            <a href='/produtos/deletar/{{produto.id}}'><span><i class="deletar">Deletar</i></span></a>
         </li>
         {%endfor%}
     </ul>
