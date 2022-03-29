@@ -12,18 +12,20 @@
             </ul>
 
         {% endif %}
-
+        <i src="C:\Users\rsf_o\Desktop\Django_Projects\estoque_django\estoque\produtos\static\icons\mode_edit_black_24dp.svg"></i>
         {%for produto in produtos%}
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="/produtos/{{produto.id}}">{{produto.nome}}</a>
-                <span class="badge bg-primary rounded-pill">{{produto.quantidade}}</span>
+                <a href="/produtos/{{produto.id}}" style='text-decoration:none;'>{{produto.nome}}</a>
+                <span class="badge bg-primary rounded-pill">Quant.: {{produto.quantidade}}</span>
+                
+                <span class="material-icons">mode_edit</span>
+                <i src="\produtos\static\icons\delete_black_24dp.svg"><a href='/produtos/atualizar/{{produto.id}}' style='text-decoration:none;'>Editar</a></i>
+                <span class="material-icons">delete</span>
+                <i src="\produtos\static\icons\delete_black_24dp.svg"><a href='/produtos/deletar/{{produto.id}}' style='text-decoration:none;'>Deletar</a></i>
+                
             </li>
 
-            <li>
-                <a href='/produtos/atualizar/{{produto.id}}' class="list-group-item list-group-item-action"><span><i class="fas fa-edit">Editar</i></span></a>
-                <a href='/produtos/deletar/{{produto.id}}' class="list-group-item list-group-item-action"><span><i class="fas fa-trash">Deletar</i></span></a>
-            </li>
         </ul>
         {%endfor%}
     </ul>
